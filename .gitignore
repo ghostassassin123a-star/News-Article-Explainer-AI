@@ -1,7 +1,36 @@
+# Environment variables
 .env
+
+# Python cache
 __pycache__/
 *.pyc
 
+# Virtual environment
+venv/
+.venv/
+
+# Streamlit
 .streamlit/
 
-venv/
+# Generated PDF reports
+*.pdf
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Python build files
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
