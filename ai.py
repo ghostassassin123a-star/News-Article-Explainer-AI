@@ -1,30 +1,43 @@
 import os
+import streamlit as st
 from dotenv import load_dotenv
 from google import genai
 from prompts import SYSTEM_PROMPT
 
+# -----------------------------
+# LOAD ENVIRONMENT VARIABLES
+# -----------------------------
 load_dotenv()
 
-api_key = os.getenv("GEMINI_API_KEY")
+# Try Streamlit Secrets first, then .env
+api_key = st.secrets.get("GEMINI_API_KEY") or os.getenv("GEMINI_API_KEY")
 
 if not api_key:
-    raise ValueError("GEMINI_API_KEY not found in .env")
+    raise ValueError(
+        "GEMINI_API_KEY not found. "
+        "Add it to Streamlit Secrets (Cloud) or your .env file (Local)."
+    )
 
+# -----------------------------
+# GEMINI CLIENT
+# -----------------------------
 client = genai.Client(api_key=api_key)
 
-# Models to try in order
+# -----------------------------
+# MODELS TO TRY
+# -----------------------------
 MODELS = [
-    "gemini-3.6-flash",
-    "gemini-3.5-flash",
-    "gemini-3.1-flash-lite",
-    "gemini-flash-latest",
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite",
     "gemini-2.0-flash",
 ]
 
-
+# -----------------------------
+# ANALYZE ARTICLE
+# -----------------------------
 def analyze_article(article: str) -> str:
     if not article.strip():
-        return "Please paste a news article."
+        return "⚠️ Please paste a news article."
 
     prompt = f"""
 {SYSTEM_PROMPT}
@@ -43,11 +56,11 @@ NEWS ARTICLE:
                 contents=prompt,
             )
 
-            if response.text:
+            if hasattr(response, "text") and response.text:
                 return response.text
 
         except Exception as e:
             last_error = e
             continue
 
-    return f"❌ All models failed.\n\nLast Error:\n{last_error}"
+    return f"❌ All Gemini models failed.\n\nLast Error:\n{last_error}"
