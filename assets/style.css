@@ -1,0 +1,259 @@
+/* =========================================
+   NEWS ARTICLE EXPLAINER AI
+   Professional Modern UI
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+html,
+body,
+[class*="css"]{
+    font-family:'Inter',sans-serif;
+}
+
+/* -----------------------------
+   APP
+----------------------------- */
+
+.stApp{
+    background:linear-gradient(135deg,#0f172a,#111827,#1e293b);
+    color:white;
+}
+
+/* Hide Streamlit */
+
+#MainMenu,
+footer,
+header{
+    visibility:hidden;
+}
+
+/* -----------------------------
+   HEADINGS
+----------------------------- */
+
+h1{
+    font-size:3rem!important;
+    font-weight:800!important;
+    color:#ffffff!important;
+    text-align:center;
+}
+
+h2,h3{
+    color:#ffffff!important;
+}
+
+/* -----------------------------
+   TEXT
+----------------------------- */
+
+p,
+label,
+span{
+    color:#e5e7eb!important;
+}
+
+/* -----------------------------
+   TEXT AREA
+----------------------------- */
+
+textarea{
+    background:#1f2937!important;
+    color:#ffffff!important;
+    border:2px solid #374151!important;
+    border-radius:15px!important;
+    font-size:16px!important;
+}
+
+textarea:focus{
+    border:2px solid #3b82f6!important;
+}
+
+/* -----------------------------
+   SIDEBAR
+----------------------------- */
+
+section[data-testid="stSidebar"]{
+    background:#111827!important;
+    border-right:1px solid #374151;
+}
+
+section[data-testid="stSidebar"] *{
+    color:#ffffff!important;
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3{
+    color:#ffffff!important;
+}
+
+section[data-testid="stSidebar"] p{
+    color:#d1d5db!important;
+}
+
+section[data-testid="stSidebar"] li{
+    color:#d1d5db!important;
+}
+
+section[data-testid="stSidebar"] ul{
+    color:#d1d5db!important;
+}
+
+/* -----------------------------
+   BUTTONS
+----------------------------- */
+
+.stButton>button{
+    width:100%;
+    border:none;
+    border-radius:12px;
+    padding:.8rem;
+    background:linear-gradient(90deg,#2563eb,#7c3aed);
+    color:white!important;
+    font-weight:700;
+    transition:.3s;
+}
+
+.stButton>button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+}
+
+/* -----------------------------
+   DOWNLOAD BUTTON
+----------------------------- */
+
+.stDownloadButton>button{
+    width:100%;
+    border:none;
+    border-radius:12px;
+    background:#10b981;
+    color:white!important;
+    font-weight:700;
+}
+
+/* -----------------------------
+   METRICS
+----------------------------- */
+
+div[data-testid="metric-container"]{
+    background:#1f2937;
+    border-radius:15px;
+    border:1px solid #374151;
+    padding:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+/* Metric labels */
+
+div[data-testid="metric-container"] label{
+    color:#cbd5e1!important;
+}
+
+/* Metric values */
+
+div[data-testid="stMetricValue"]{
+    color:#ffffff!important;
+    font-size:2rem!important;
+    font-weight:700!important;
+}
+
+/* Metric delta */
+
+div[data-testid="stMetricDelta"]{
+    color:#22c55e!important;
+}
+
+/* -----------------------------
+   ALERTS
+----------------------------- */
+
+.stSuccess,
+.stWarning,
+.stInfo{
+    border-radius:15px;
+}
+
+/* -----------------------------
+   SPINNER
+----------------------------- */
+
+.stSpinner{
+    color:#60a5fa;
+}
+
+/* -----------------------------
+   MARKDOWN
+----------------------------- */
+
+div[data-testid="stMarkdownContainer"]{
+    font-size:16px;
+    line-height:1.7;
+    color:#e5e7eb!important;
+}
+
+/* -----------------------------
+   DIVIDER
+----------------------------- */
+
+hr{
+    border:1px solid #374151;
+}
+
+/* -----------------------------
+   SCROLLBAR
+----------------------------- */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111827;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#4b5563;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#6b7280;
+}
+
+/* -----------------------------
+   CARD
+----------------------------- */
+
+.card{
+    background:#1f2937;
+    padding:20px;
+    border-radius:15px;
+    border:1px solid #374151;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+/* -----------------------------
+   BADGE
+----------------------------- */
+
+.badge{
+    display:inline-block;
+    padding:6px 14px;
+    background:#2563eb;
+    color:white;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+}
+
+/* -----------------------------
+   FOOTER
+----------------------------- */
+
+.footer{
+    text-align:center;
+    color:#9ca3af!important;
+    margin-top:40px;
+}
